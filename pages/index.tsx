@@ -1,4 +1,5 @@
 import Head from "next/head"
+import Link from 'next/link'
 import ProductList from "../components/ProductList"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
@@ -12,6 +13,9 @@ const Index = (props) => {
                 <title>Beautiful, high quality carpets | CarpetCity</title>
                 <meta name="description" content="Buy beautiful, high quality carpets for your home."/>
             </Head>
+            <Link href="/about-me">
+                <a>About Us</a>
+            </Link>
             <Header />
             <main className="main">
                 <ProductList products={props.products} />

@@ -16,6 +16,18 @@ const Index = (props) => {
             <Link href="/about-me">
                 <a>About Us</a>
             </Link>
+            <ul>
+                <li>
+                    <Link href='/post/[id]' as='/post/1'>
+                        <a>Post 1</a>
+                    </Link>
+                </li>
+                <li>
+                    <Link href='/post/[id]' as='/post/2'>
+                        <a>Post 2</a>
+                    </Link>
+                </li>
+            </ul>
             <Header />
             <main className="main">
                 <ProductList products={props.products} />

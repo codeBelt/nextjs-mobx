@@ -1,7 +1,7 @@
 import { isServer } from '../utils/isServer';
 import PostStore from './PostStore';
 import UIStore from './UIStore';
-import {Context, createContext, useContext} from 'react';
+import { Context, createContext, useContext } from 'react';
 
 let clientSideStores;
 
@@ -25,11 +25,7 @@ export function getStores(initialData = { postStoreInitialData: {} }) {
 const StoreContext: Context<any> = createContext({});
 
 export function StoreProvider(props) {
-  return (
-      <StoreContext.Provider value={props.value}>
-        {props.children}
-      </StoreContext.Provider>
-  );
+  return <StoreContext.Provider value={props.value}>{props.children}</StoreContext.Provider>;
 }
 
 export function useMobxStores() {

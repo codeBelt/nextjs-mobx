@@ -1,10 +1,10 @@
 @charset "utf-8";
-@import url("https://fonts.googleapis.com/css?family=Muli:400,700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Muli:400,700&display=swap');
 
 // Variables
 $color--default: #3a3a3a;
 $color--light: lighten($color--default, 65%);
-$color--primary: #4ABDAC;
+$color--primary: #4abdac;
 $color--secondary: #429bfc;
 $color--background: #f8faff;
 
@@ -15,7 +15,7 @@ $layout--max-width: 1000px;
 // Default styling
 * {
   box-sizing: border-box;
-  font-family: "Muli", sans-serif;
+  font-family: 'Muli', sans-serif;
   font-size: $size--unit * 2;
   color: $color--default;
 }
@@ -55,7 +55,7 @@ body,
   }
 
   &:before {
-    content: " ";
+    content: ' ';
     position: absolute;
     background-color: $color;
     top: 0;
@@ -105,8 +105,8 @@ body,
   }
 
   &__logo {
-    max-height: $size--unit*5;
-    margin-right: $size--unit*1;
+    max-height: $size--unit * 5;
+    margin-right: $size--unit * 1;
   }
 
   &__logo-container {

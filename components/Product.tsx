@@ -1,4 +1,4 @@
-import ProductDefinition from './ProductDefinition'
+import ProductDefinition from './ProductDefinition';
 
 const Product = (props) => {
   return (
@@ -11,7 +11,7 @@ const Product = (props) => {
       </div>
       <img src={props.product.image} alt="product image" className="product__image" />
     </div>
-  )
-}
+  );
+};
 
 export default Product;

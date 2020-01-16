@@ -3,7 +3,7 @@ import App from 'next/app';
 
 import { getStores, StoreProvider } from '../stores/stores';
 
-class CustomApp extends App<{initialData: any}> {
+class CustomApp extends App<{ initialData: any }> {
   static async getInitialProps(appContext) {
     // On server-side, this runs once and creates new stores
     // On client-side, this always reuses existing stores
@@ -37,7 +37,7 @@ class CustomApp extends App<{initialData: any}> {
 
     return (
       <StoreProvider value={stores}>
-          <Component {...pageProps} />
+        <Component {...pageProps} />
       </StoreProvider>
     );
   }

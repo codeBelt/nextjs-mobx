@@ -1,5 +1,5 @@
 // const sitemap = require('nextjs-sitemap-generator');
-const withSass = require('@zeit/next-sass')
+const withStyles = require('@webdeb/next-styles')
 
 // sitemap({
 //   baseUrl: 'https://snipcart-nextjs-seo.netlify.com',
@@ -7,10 +7,12 @@ const withSass = require('@zeit/next-sass')
 //   targetDirectory : 'static/'
 // });
 
-module.exports = withSass({
-  exportPathMap: function () {
-    return {
-      '/': { page: '/' },
-    }
-  }
+module.exports = withStyles({
+    sass: true, // use .scss files
+    modules: true,
+    // exportPathMap: function () {
+    //     return {
+    //         '/': { page: '/' },
+    //     }
+    // }
 });

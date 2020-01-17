@@ -3,6 +3,17 @@ import App from 'next/app';
 
 import { getStores, StoreProvider } from '../stores/stores';
 
+// https://github.com/zeit/next.js/tree/canary/examples
+// https://github.com/zeit/next.js/tree/canary/examples/with-external-styled-jsx-sass
+// https://github.com/zeit/next.js/tree/canary/examples/with-next-sass
+
+// https://github.com/zeit/next.js/tree/canary/examples/with-mobx
+// https://github.com/zeit/next.js/tree/canary/examples/with-mobx-react-lite
+
+// https://github.com/borekb/nextjs-with-mobx
+
+// https://github.com/nghiepit/next-mobx-wrapper
+
 class CustomApp extends App<{ initialData: any }> {
   static async getInitialProps(appContext) {
     // On server-side, this runs once and creates new stores

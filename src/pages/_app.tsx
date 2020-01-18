@@ -1,7 +1,10 @@
-import React from 'react';
-import App from 'next/app';
+import './_app.scss';
 
+import React, {Suspense} from 'react';
+import App from 'next/app';
 import { getStores, StoreProvider } from '../stores/stores';
+import {configure} from 'mobx';
+import RootStore from '../stores/RootStore';
 
 // https://github.com/zeit/next.js/tree/canary/examples
 // https://github.com/zeit/next.js/tree/canary/examples/with-external-styled-jsx-sass
@@ -13,6 +16,10 @@ import { getStores, StoreProvider } from '../stores/stores';
 // https://github.com/borekb/nextjs-with-mobx
 
 // https://github.com/nghiepit/next-mobx-wrapper
+
+// configure({ enforceActions: 'always' }); // https://mobx.js.org/refguide/api.html#enforceactions
+
+export let rootStore = new RootStore({});
 
 class CustomApp extends App<{ initialData: any }> {
   static async getInitialProps(appContext) {

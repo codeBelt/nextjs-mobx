@@ -1,74 +1,33 @@
-import Head from 'next/head';
-import Link from 'next/link';
-import ProductList from '../components/ProductList';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import '../assets/index.scss';
+// import styles from './index.module.scss';
 
-const Index = (props) => {
+import React from 'react';
+import { Divider, Icon, Header } from 'semantic-ui-react';
+import { observer } from 'mobx-react';
+import {rootStore} from './_app';
+import {LoadingIndicator} from '../components/shared/loading-indicator/LoadingIndicator';
+import {MainOverview} from '../components/index-page/components/main-overview/MainOverview';
+import {Actors} from '../components/index-page/components/actors/Actors';
+import {PageLayout} from '../components/shared/PageLayout';
+
+interface IProps {}
+
+const IndexPage: React.FC<IProps> = observer((props) => {
+  const { showsStore } = rootStore;
+  const isRequesting = showsStore.isRequestingShowAndCast;
+
   return (
-    <div className="app">
-      <Head>
-        <title>Beautiful, high quality carpets | CarpetCity</title>
-        <meta name="description" content="Buy beautiful, high quality carpets for your home." />
-      </Head>
-      <Link href="/about-me">
-        <a>About Us</a>
-      </Link>
-      <ul>
-        <li>
-          <Link href="/post/[id]" as="/post/1">
-            <a>Post 1</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/post/[id]" as="/post/2">
-            <a>Post 2</a>
-          </Link>
-        </li>
-      </ul>
-      <Header />
-      <main className="main">
-        <ProductList products={props.products} />
-      </main>
-      <Footer />
-    </div>
+    <PageLayout>
+        <LoadingIndicator isActive={isRequesting}>
+          <MainOverview />
+          <Divider horizontal={true}>
+            <Header as="h4">
+              <Icon name="users" /> Cast
+            </Header>
+          </Divider>
+          <Actors />
+        </LoadingIndicator>
+    </PageLayout>
   );
-};
+});
 
-Index.getInitialProps = async () => {
-  return {
-    products: [
-      {
-        id: 'nextjs-seo_carpet1',
-        name: 'Straight and Narrow',
-        price: 25.0,
-        image: 'static/straight-and-narrow.jpg',
-        description: 'Revitalize your living room with this durable and stain hiding carpet.',
-      },
-      {
-        id: 'nextjs-seo_carpet2',
-        name: 'Casonova',
-        price: 25.0,
-        image: 'static/casonova.jpg',
-        description: 'Your feet will enjoy this fluffy carpet. Well... that is until it gets dirty!',
-      },
-      {
-        id: 'nextjs-seo_carpet3',
-        name: 'Living Bliss',
-        price: 25.0,
-        image: 'static/living-bliss.jpg',
-        description: 'This thermally insulated carpet will make sure your room stays nice and warm in the winter.',
-      },
-      {
-        id: 'nextjs-seo_carpet4',
-        name: 'Timeless Beige',
-        price: 25.0,
-        image: 'static/timeless-beige.jpg',
-        description: 'It might be timeless, but it sure is ugly. This is what I have in my apartment.',
-      },
-    ],
-  };
-};
-
-export default Index;
+export default IndexPage;

@@ -1,6 +1,9 @@
 const path = require('path');
 // const sitemap = require('nextjs-sitemap-generator');
 const withStyles = require('@webdeb/next-styles');
+const withBundleAnalyzer = require('@next/bundle-analyzer')({
+  enabled: process.env.ANALYZE === 'true',
+});
 
 // sitemap({
 //   baseUrl: 'https://snipcart-nextjs-seo.netlify.com',
@@ -30,8 +33,10 @@ const webpack = (config, options) => {
   return config;
 };
 
-module.exports = withStyles({
-  sass: true, // use .scss files
-  modules: true,
-  webpack,
-});
+module.exports = withBundleAnalyzer(
+  withStyles({
+    sass: true, // use .scss files
+    modules: true,
+    webpack,
+  })
+);

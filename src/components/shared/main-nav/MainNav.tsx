@@ -17,9 +17,9 @@ export const MainNav: React.FC<IProps> = observer((props) => {
   return (
     <Segment inverted={true} className={styles.wrapper}>
       <Menu inverted={true} pointing={true} secondary={true}>
-        <MenuNavLink href={Routes.Home} name="Home" pathname={pathname} />
-        <MenuNavLink href={Routes.Episodes} name="Episodes" pathname={pathname} />
-        <MenuNavLink href={Routes.About} name="About" pathname={pathname} />
+        <Menu.Item as={MenuNavLink} to={Routes.Home} label="Home" active={pathname === Routes.Home} />
+        <Menu.Item as={MenuNavLink} to={Routes.Episodes} label="Episodes" active={pathname === Routes.Episodes} />
+        <Menu.Item as={MenuNavLink} to={Routes.About} label="About" active={pathname === Routes.About} />
       </Menu>
       {hideSearchInput && <NavSearch />}
     </Segment>

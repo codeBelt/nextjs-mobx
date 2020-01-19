@@ -19,7 +19,7 @@ const AboutPage: React.FC<IProps> = observer((props) => {
   const { isRequesting, error } = showsStore.errorExample;
 
   return (
-    <PageLayout>
+    <PageLayout title="About Page">
       <div className={styles.wrapper}>
         <Header as="h2">About</Header>
         <LoadingIndicator isActive={isRequesting}>

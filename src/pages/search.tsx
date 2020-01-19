@@ -40,7 +40,7 @@ const SearchPage: React.FC<IProps> = observer((props) => {
   );
 
   return (
-    <PageLayout>
+    <PageLayout title="Search Page">
         <Form onSubmit={onClickSearch}>
           <Form.Input
             name="searchTerm"

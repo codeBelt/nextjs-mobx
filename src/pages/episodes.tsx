@@ -19,7 +19,7 @@ const Episodes: React.FC<IProps> = observer((props) => {
   const episodeTables = showsStore.selectEpisodes;
 
   return (
-    <PageLayout>
+    <PageLayout title="Episodes Page">
       <LoadingIndicator isActive={isRequesting} />
       {episodeTables.map((model: IEpisodeTable) => (
         <EpisodesTable key={model.title} tableData={model} />

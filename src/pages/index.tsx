@@ -16,7 +16,7 @@ const IndexPage: React.FC<IProps> = observer((props) => {
   const isRequesting = showsStore.isRequestingShowAndCast;
 
   return (
-    <PageLayout>
+    <PageLayout title="Home Page">
         <LoadingIndicator isActive={isRequesting}>
           <MainOverview />
           <Divider horizontal={true}>

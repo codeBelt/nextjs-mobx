@@ -17,7 +17,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 //     }
 // }
 
-const webpack = (config, options) => {
+const webpackConfig = (config, options) => {
   config.resolve.alias['environment'] = path.join(__dirname, 'src', 'environments', process.env.CLIENT_ENV);
 
   config.module.rules.push({
@@ -33,10 +33,14 @@ const webpack = (config, options) => {
   return config;
 };
 
-module.exports = withBundleAnalyzer(
-  withStyles({
-    sass: true, // use .scss files
-    modules: true,
-    webpack,
-  })
-);
+const withStylesConfig = {
+  sass: true,
+  modules: true,
+};
+
+const nextConfig = {
+  ...withStylesConfig,
+  webpack: webpackConfig,
+};
+
+module.exports = withBundleAnalyzer(withStyles(nextConfig));

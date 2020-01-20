@@ -16,6 +16,7 @@ export default function baseEnv(baseApi: string) {
       errorExample: 'https://httpstat.us/520',
     },
     isServer: typeof window === 'undefined',
+    isClient: typeof window !== 'undefined',
     isProduction: true,
     isDevelopment: false,
     isTesting: false,

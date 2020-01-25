@@ -1,14 +1,16 @@
+// import styles from './EpisodesPage.module.scss';
+
 import React, { useEffect } from 'react';
-import IEpisodeTable from '../stores/shows/computed/IEpisodeTable';
-import { LoadingIndicator } from '../components/shared/loading-indicator/LoadingIndicator';
-import { EpisodesTable } from '../components/episodes-page/components/episodes-table/EpisodesTable';
+import IEpisodeTable from '../../stores/shows/computed/IEpisodeTable';
+import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
+import { EpisodesTable } from './components/episodes-table/EpisodesTable';
 import { observer } from 'mobx-react';
-import {rootStore} from './_app';
-import {PageLayout} from '../components/shared/PageLayout';
+import { rootStore } from '../App';
+import { PageLayout } from '../shared/PageLayout';
 
 interface IProps {}
 
-const Episodes: React.FC<IProps> = observer((props) => {
+export const EpisodesPage: React.FC<IProps> = observer((props) => {
   const { showsStore } = rootStore;
 
   useEffect(() => {
@@ -27,5 +29,3 @@ const Episodes: React.FC<IProps> = observer((props) => {
     </PageLayout>
   );
 });
-
-export default Episodes;

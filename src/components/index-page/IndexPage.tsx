@@ -1,0 +1,31 @@
+// import styles from './IndexPage.module.scss';
+
+import React from 'react';
+import { Divider, Icon, Header } from 'semantic-ui-react';
+import { observer } from 'mobx-react';
+import { rootStore } from '../App';
+import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
+import { MainOverview } from './components/main-overview/MainOverview';
+import { Actors } from './components/actors/Actors';
+import { PageLayout } from '../shared/PageLayout';
+
+interface IProps {}
+
+export const IndexPage: React.FC<IProps> = observer((props) => {
+  const { showsStore } = rootStore;
+  const isRequesting = showsStore.isRequestingShowAndCast;
+
+  return (
+    <PageLayout title="Home Page">
+      <LoadingIndicator isActive={isRequesting}>
+        <MainOverview />
+        <Divider horizontal={true}>
+          <Header as="h4">
+            <Icon name="users" /> Cast
+          </Header>
+        </Divider>
+        <Actors />
+      </LoadingIndicator>
+    </PageLayout>
+  );
+});

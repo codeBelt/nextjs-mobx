@@ -1,6 +1,6 @@
 import styles from './LoadingIndicator.module.scss';
 
-import React  from 'react';
+import React from 'react';
 import { Loader } from 'semantic-ui-react';
 
 interface IProps {

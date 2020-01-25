@@ -1,9 +1,9 @@
-import './_app.scss';
+import './App.scss';
 
-import React, {Suspense} from 'react';
-import App from 'next/app';
+import React, { Suspense } from 'react';
+import NextApp from 'next/app';
 import { getStores, StoreProvider } from '../stores/stores';
-import {configure} from 'mobx';
+import { configure } from 'mobx';
 import RootStore from '../stores/RootStore';
 
 // https://github.com/zeit/next.js/tree/canary/examples
@@ -21,7 +21,7 @@ import RootStore from '../stores/RootStore';
 
 export let rootStore = new RootStore({});
 
-class CustomApp extends App<{ initialData: any }> {
+export class App extends NextApp<{ initialData: any }> {
   static async getInitialProps(appContext) {
     // On server-side, this runs once and creates new stores
     // On client-side, this always reuses existing stores
@@ -31,7 +31,7 @@ class CustomApp extends App<{ initialData: any }> {
     appContext.ctx.mobxStores = mobxStores;
 
     // Call "super" to run page's `getInitialProps`
-    const appProps = await App.getInitialProps(appContext);
+    const appProps = await NextApp.getInitialProps(appContext);
 
     // Gather serialization-friendly data from stores
     const initialData = {
@@ -60,5 +60,3 @@ class CustomApp extends App<{ initialData: any }> {
     );
   }
 }
-
-export default CustomApp;

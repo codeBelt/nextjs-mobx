@@ -4,12 +4,12 @@ import React, { useCallback, useState } from 'react';
 import { Form, InputOnChangeData, FormProps } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
 import { Routes } from '../../../../../constants/Routes';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 
 interface IProps {}
 
 export const NavSearch: React.FC<IProps> = observer((props) => {
-  const {push} = useRouter();
+  const { push } = useRouter();
   const [searchTerm, setSearchTerm] = useState('');
 
   const onChangeInput = useCallback((event: React.ChangeEvent<HTMLInputElement>, data: InputOnChangeData) => {

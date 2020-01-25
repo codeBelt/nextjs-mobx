@@ -1,7 +1,6 @@
 import { ShowsStore } from './shows/ShowsStore';
 import { ToastsStore } from './toasts/ToastsStore';
-import Router from 'next/router'
-import {SingletonRouter} from 'next/dist/client/router';
+import Router, { SingletonRouter } from 'next/router';
 
 export default class RootStore {
   readonly router: SingletonRouter = Router;

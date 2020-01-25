@@ -3,7 +3,7 @@ import ShowsSearchResponseModel from './models/ShowsSearchResponseModel';
 import ShowModel from '../../../stores/shows/models/shows/ShowModel';
 import { runInAction } from 'mobx';
 import { requestAction } from '../../../utilities/mobxUtil';
-import { toastResponseError, responseToModels} from '../../../utilities/apiUtil';
+import { toastResponseError, responseToModels } from '../../../utilities/apiUtil';
 import http from '../../../utilities/http';
 
 interface ISourceProps {

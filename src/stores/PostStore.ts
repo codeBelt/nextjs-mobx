@@ -1,36 +1,60 @@
-import { observable, action } from 'mobx';
+import { observable, action, computed } from 'mobx';
 
-import { fetchPost } from '../utils/api';
+import environment from 'environment';
+import { requestAction } from '../utilities/mobxUtil';
+import http from '../utilities/http';
+import EpisodeModel from './shows/models/episodes/EpisodeModel';
+import { initialResponseStatus } from '../models/IResponseStatus';
+import IEpisodeTableRow from './shows/computed/IEpisodeTableRow';
+import dayjs from 'dayjs';
+import IEpisodeTable from './shows/computed/IEpisodeTable';
+
+import groupBy from 'lodash.groupby';
 
 class PostStore {
+  @observable currentShowId = '74';
   @observable post = '';
   @observable postId = '';
+  @observable episodes = initialResponseStatus<EpisodeModel[]>([]);
 
   constructor(initialData: any = {}) {
-    this.post = initialData.post;
-    this.postId = initialData.postId;
+    this.episodes = initialResponseStatus<EpisodeModel[]>(initialData.episodes?.data || []);
   }
 
-  async fetch(id) {
-    const response = await fetchPost(id);
+  @action
+  async requestEpisodes() {
+    const endpoint = environment.api.episodes.replace(':showId', this.currentShowId);
 
-    this.setPost(response);
-    this.setPostId(id);
+    const finalStatus = await requestAction((status) => {
+      this.episodes = { ...this.episodes, ...status };
+    }, http.get<EpisodeModel[]>(endpoint));
+
+    return finalStatus;
   }
 
-  @action setPost(post) {
-    this.post = post;
+  @computed
+  get selectEpisodes() {
+    const seasons: { [season: string]: EpisodeModel[] } = groupBy(this.episodes.data, 'season');
+
+    return Object.entries(seasons).map(
+      ([season, models]): IEpisodeTable => {
+        return {
+          title: `Season ${season}`,
+          rows: this._createTableRows(models),
+        };
+      }
+    );
   }
 
-  @action setPostId(id) {
-    this.postId = id;
-  }
-
-  __data() {
-    return {
-      post: this.post,
-      postId: this.postId,
-    };
+  _createTableRows(models: EpisodeModel[]) {
+    return models.map(
+      (model): IEpisodeTableRow => ({
+        episode: model.number,
+        name: model.name,
+        date: dayjs(model.airdate).format('MMM D, YYYY'),
+        image: model.image?.medium ?? '',
+      })
+    );
   }
 }
 

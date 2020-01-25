@@ -30,6 +30,8 @@ EpisodesPage.getInitialProps = async (content: NextPageContext) => {
   const data = await createRootStore().showsStore.requestEpisodes();
 
   return {
-    episodes: data,
+    showsStore: {
+      episodes: data,
+    },
   };
 };

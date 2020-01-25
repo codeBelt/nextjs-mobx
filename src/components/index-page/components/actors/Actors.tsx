@@ -3,12 +3,12 @@ import { Card } from 'semantic-ui-react';
 import CastModel from '../../../../stores/shows/models/cast/CastModel';
 import { ActorCard } from './components/actor-card/ActorCard';
 import { observer } from 'mobx-react';
-import { rootStore } from '../../../App';
+import { useMobxStores } from '../../../../stores/stores';
 
 interface IProps {}
 
 export const Actors: React.FC<IProps> = observer((props) => {
-  const { showsStore } = rootStore;
+  const { showsStore } = useMobxStores();
 
   useEffect(() => {
     showsStore.requestCast();

@@ -3,17 +3,17 @@
 import React from 'react';
 import { Divider, Icon, Header } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
-import { rootStore } from '../App';
 import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
 import { MainOverview } from './components/main-overview/MainOverview';
 import { Actors } from './components/actors/Actors';
 import { PageLayout } from '../shared/PageLayout';
 import { NextPage } from 'next';
+import { useMobxStores } from '../../stores/stores';
 
 interface IProps {}
 
 export const IndexPage: NextPage<IProps> = observer((props) => {
-  const { showsStore } = rootStore;
+  const { showsStore } = useMobxStores();
   const isRequesting = showsStore.isRequestingShowAndCast;
 
   return (

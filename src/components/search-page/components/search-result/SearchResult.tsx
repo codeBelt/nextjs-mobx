@@ -4,8 +4,8 @@ import ShowModel from '../../../../stores/shows/models/shows/ShowModel';
 import { observer } from 'mobx-react';
 import { Routes } from '../../../../constants/Routes';
 import { useCallback } from 'react';
-import { rootStore } from '../../../App';
 import { useRouter } from 'next/router';
+import { useMobxStores } from '../../../../stores/stores';
 
 interface IProps {
   item: ShowModel;
@@ -13,7 +13,7 @@ interface IProps {
 
 export const SearchResult: React.FC<IProps> = observer((props) => {
   const { item } = props;
-  const { showsStore } = rootStore;
+  const { showsStore } = useMobxStores();
   const { push } = useRouter();
 
   const onClick = useCallback(() => {

@@ -1,33 +1,21 @@
-import { isServer } from '../utils/isServer';
-import PostStore from './PostStore';
-import UIStore from './UIStore';
 import { Context, createContext, useContext } from 'react';
+import environment from 'environment';
+import RootStore from './RootStore';
 
 let clientSideStores;
 
-export function getStores(initialData = { postStoreInitialData: {} }) {
-  if (isServer) {
-    return {
-      postStore: new PostStore(initialData.postStoreInitialData),
-      uiStore: new UIStore(),
-    };
-  }
-  if (!clientSideStores) {
-    clientSideStores = {
-      postStore: new PostStore(initialData.postStoreInitialData),
-      uiStore: new UIStore(),
-    };
+export const createRootStore = (initialState = {}) => {
+  if (environment.isServer || !clientSideStores) {
+    clientSideStores = new RootStore(initialState);
   }
 
   return clientSideStores;
-}
+};
 
 const StoreContext: Context<any> = createContext({});
 
-export function StoreProvider(props) {
+export const StoreProvider = (props) => {
   return <StoreContext.Provider value={props.value}>{props.children}</StoreContext.Provider>;
-}
+};
 
-export function useMobxStores() {
-  return useContext(StoreContext);
-}
+export const useMobxStores = () => useContext(StoreContext);

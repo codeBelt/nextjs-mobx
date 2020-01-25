@@ -6,14 +6,14 @@ import IToast from '../../../stores/toasts/models/IToast';
 import { observer } from 'mobx-react';
 import { useCallback, useMemo } from 'react';
 import { errorColorMap } from '../../../constants/errorColorMap';
-import { useMobxStores } from '../../../stores/stores';
+import { useRootStoreContext } from '../../../stores/stores';
 
 interface IProps {
   readonly item: IToast;
 }
 
 export const ToastCard: React.FC<IProps> = observer((props) => {
-  const { toastsStore } = useMobxStores();
+  const { toastsStore } = useRootStoreContext();
   const { item } = props;
 
   const onClickRemoveNotification = useCallback(() => {

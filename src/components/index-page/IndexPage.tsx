@@ -8,12 +8,12 @@ import { MainOverview } from './components/main-overview/MainOverview';
 import { Actors } from './components/actors/Actors';
 import { PageLayout } from '../shared/PageLayout';
 import { NextPage } from 'next';
-import { useMobxStores } from '../../stores/stores';
+import { useRootStoreContext } from '../../stores/stores';
 
 interface IProps {}
 
 export const IndexPage: NextPage<IProps> = observer((props) => {
-  const { showsStore } = useMobxStores();
+  const { showsStore } = useRootStoreContext();
   const isRequesting = showsStore.isRequestingShowAndCast;
 
   return (

@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 import { Routes } from '../../../../constants/Routes';
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { useMobxStores } from '../../../../stores/stores';
+import { useRootStoreContext } from '../../../../stores/stores';
 
 interface IProps {
   item: ShowModel;
@@ -13,7 +13,7 @@ interface IProps {
 
 export const SearchResult: React.FC<IProps> = observer((props) => {
   const { item } = props;
-  const { showsStore } = useMobxStores();
+  const { showsStore } = useRootStoreContext();
   const { push } = useRouter();
 
   const onClick = useCallback(() => {

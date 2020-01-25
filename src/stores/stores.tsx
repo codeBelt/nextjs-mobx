@@ -3,21 +3,15 @@ import environment from 'environment';
 import RootStore from './RootStore';
 
 export let rootStore: RootStore;
+export let RootStoreContext: Context<RootStore>;
 
 export const createRootStore = (initialState: Partial<RootStore> = {}) => {
   if (environment.isServer || !rootStore) {
     rootStore = new RootStore(initialState);
+    RootStoreContext = createContext(rootStore);
   }
 
   return rootStore;
 };
 
-const StoreContext: Context<any> = createContext({});
-
-export const StoreProvider = (props) => {
-  return <StoreContext.Provider value={props.value}>{props.children}</StoreContext.Provider>;
-};
-
-export const useMobxStores = () => {
-  return useContext(StoreContext);
-};
+export const useRootStoreContext = () => useContext(RootStoreContext);

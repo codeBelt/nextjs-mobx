@@ -6,12 +6,12 @@ import { Header, Container, Message } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
 import { PageLayout } from '../shared/PageLayout';
 import { NextPage } from 'next';
-import { useMobxStores } from '../../stores/stores';
+import { useRootStoreContext } from '../../stores/stores';
 
 interface IProps {}
 
 export const AboutPage: NextPage<IProps> = observer((props) => {
-  const { showsStore } = useMobxStores();
+  const { showsStore } = useRootStoreContext();
 
   useEffect(() => {
     showsStore.requestError();

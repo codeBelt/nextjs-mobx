@@ -1,10 +1,13 @@
 import './App.scss';
 
-import React, { Context } from 'react';
+import React from 'react';
 import NextApp, { AppProps } from 'next/app';
-
 import { createRootStore, StoreProvider } from '../stores/stores';
-import RootStore from '../stores/RootStore';
+import { useStaticRendering } from 'mobx-react';
+import environment from 'environment';
+
+// eslint-disable-next-line react-hooks/rules-of-hooks
+useStaticRendering(environment.isServer);
 
 // export let rootStore = new RootStore({});
 // export let RootStoreContext: Context<RootStore>;

@@ -2,14 +2,14 @@ import { Context, createContext, useContext } from 'react';
 import environment from 'environment';
 import RootStore from './RootStore';
 
-let clientSideStores: RootStore;
+export let rootStore: RootStore;
 
 export const createRootStore = (initialState: Partial<RootStore> = {}) => {
-  if (environment.isServer || !clientSideStores) {
-    clientSideStores = new RootStore(initialState);
+  if (environment.isServer || !rootStore) {
+    rootStore = new RootStore(initialState);
   }
 
-  return clientSideStores;
+  return rootStore;
 };
 
 const StoreContext: Context<any> = createContext({});

@@ -8,10 +8,11 @@ import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
 import { MainOverview } from './components/main-overview/MainOverview';
 import { Actors } from './components/actors/Actors';
 import { PageLayout } from '../shared/PageLayout';
+import { NextPage } from 'next';
 
 interface IProps {}
 
-export const IndexPage: React.FC<IProps> = observer((props) => {
+export const IndexPage: NextPage<IProps> = observer((props) => {
   const { showsStore } = rootStore;
   const isRequesting = showsStore.isRequestingShowAndCast;
 

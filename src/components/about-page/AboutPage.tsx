@@ -6,10 +6,11 @@ import { Header, Container, Message } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
 import { rootStore } from '../App';
 import { PageLayout } from '../shared/PageLayout';
+import { NextPage } from 'next';
 
 interface IProps {}
 
-export const AboutPage: React.FC<IProps> = observer((props) => {
+export const AboutPage: NextPage<IProps> = observer((props) => {
   const { showsStore } = rootStore;
 
   useEffect(() => {

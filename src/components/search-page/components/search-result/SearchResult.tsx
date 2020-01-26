@@ -5,7 +5,7 @@ import { observer } from 'mobx-react';
 import { Routes } from '../../../../constants/Routes';
 import { useCallback } from 'react';
 import { useRouter } from 'next/router';
-import { useRootStoreContext } from '../../../../stores/stores';
+import { useRootStoreContext } from '../../../../utilities/storeUtil';
 
 interface IProps {
   item: ShowModel;

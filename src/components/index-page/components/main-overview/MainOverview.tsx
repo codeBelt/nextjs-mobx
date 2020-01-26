@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Item } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
-import { useRootStoreContext } from '../../../../stores/stores';
+import { useRootStoreContext } from '../../../../utilities/storeUtil';
 
 interface IProps {}
 

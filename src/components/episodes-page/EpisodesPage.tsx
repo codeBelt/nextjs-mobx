@@ -6,7 +6,7 @@ import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
 import { EpisodesTable } from './components/episodes-table/EpisodesTable';
 import { observer } from 'mobx-react';
 import { PageLayout } from '../shared/PageLayout';
-import { createRootStore, useRootStoreContext } from '../../stores/stores';
+import { createRootStore, useRootStoreContext } from '../../utilities/storeUtil';
 import { NextPage, NextPageContext } from 'next';
 
 interface IProps {}

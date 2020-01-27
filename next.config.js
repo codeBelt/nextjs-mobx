@@ -1,21 +1,28 @@
 const path = require('path');
-// const sitemap = require('nextjs-sitemap-generator');
+const axios = require('axios');
 const withStyles = require('@webdeb/next-styles');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-// sitemap({
-//   baseUrl: 'https://snipcart-nextjs-seo.netlify.com',
-//   pagesDirectory: __dirname + "/pages",
-//   targetDirectory : 'static/'
-// });
-
-// exportPathMap = () => {
-//     return {
-//         '/': { page: '/' },
-//     }
-// }
+// const exportPathMap = async () => {
+//   // we fetch our list of posts, this allow us to dynamically generate the exported pages
+//   const response = await axios.get('https://jsonplaceholder.typicode.com/posts?_page=1');
+//   // transform the list of posts into a map of pages with the pathname `/post/:id`
+//   const pages = response.reduce(
+//     (pages, post) =>
+//       Object.assign({}, pages, {
+//         [`/post/${post.id}`]: { page: '/post/[id]' },
+//       }),
+//     {}
+//   );
+//
+//   // combine the map of post pages with the home
+//   return {
+//     '/': { page: '/' },
+//     ...pages,
+//   };
+// };
 
 const webpackConfig = (config, options) => {
   config.resolve.alias['environment'] = path.join(__dirname, 'src', 'environments', process.env.CLIENT_ENV);
@@ -41,6 +48,7 @@ const withStylesConfig = {
 const nextConfig = {
   ...withStylesConfig,
   webpack: webpackConfig,
+  // exportPathMap,
 };
 
 module.exports = withBundleAnalyzer(withStyles(nextConfig));

@@ -66,18 +66,3 @@ export const SearchPage: NextPage<IProps> = observer((props) => {
     </PageLayout>
   );
 });
-
-// import { NextPage, NextPageContext } from 'next';
-//
-// const MyComponent: NextPage<MyPropsInterface> = props => (
-//   // ...
-// )
-//
-// interface Context extends NextPageContext {
-//   // any modifications to the default context, e.g. query types
-// }
-//
-// MyComponent.getInitialProps = async (ctx: Context) => {
-//   // ...
-//   return props
-// }

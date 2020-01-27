@@ -12,9 +12,6 @@ export class App extends NextApp<AppProps<{}>> {
   render() {
     const { Component, pageProps } = this.props;
 
-    // During SSR, this will create new store instances so having `initialData` is crucial.
-    // During the client-side hydration, same applies.
-    // From then on, calls to `createRootStore()` return existing instances.
     const rootStore = createRootStore(pageProps);
 
     return (

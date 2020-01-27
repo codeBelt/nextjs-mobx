@@ -27,11 +27,11 @@ export const EpisodesPage: NextPage<IProps> = observer((props) => {
 });
 
 EpisodesPage.getInitialProps = async (content: NextPageContext) => {
-  const data = await createRootStore().showsStore.requestEpisodes();
+  const episodes = await createRootStore().showsStore.requestEpisodes();
 
   return {
     showsStore: {
-      episodes: data,
+      episodes,
     },
   };
 };

@@ -15,7 +15,7 @@ import { toastResponseError, responseToModels } from '../../utilities/apiUtil';
 
 export const ShowsStore = (rootStore: RootStore, initialState: {} = {}) =>
   observable({
-    currentShowId: '1',
+    currentShowId: '74',
     show: initialResponseStatus<ShowModel | null>(null),
     episodes: initialResponseStatus<EpisodeModel[]>([]),
     actors: initialResponseStatus<CastModel[]>([]),

@@ -3,16 +3,17 @@
 import React from 'react';
 import { Divider, Icon, Header } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
-import { rootStore } from '../App';
 import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
 import { MainOverview } from './components/main-overview/MainOverview';
 import { Actors } from './components/actors/Actors';
 import { PageLayout } from '../shared/PageLayout';
+import { NextPage } from 'next';
+import { useRootStoreContext } from '../../utilities/storeUtil';
 
 interface IProps {}
 
-export const IndexPage: React.FC<IProps> = observer((props) => {
-  const { showsStore } = rootStore;
+export const IndexPage: NextPage<IProps> = observer((props) => {
+  const { showsStore } = useRootStoreContext();
   const isRequesting = showsStore.isRequestingShowAndCast;
 
   return (

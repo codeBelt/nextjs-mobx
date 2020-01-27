@@ -4,13 +4,14 @@ import React, { useEffect } from 'react';
 import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
 import { Header, Container, Message } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
-import { rootStore } from '../App';
 import { PageLayout } from '../shared/PageLayout';
+import { NextPage } from 'next';
+import { useRootStoreContext } from '../../utilities/storeUtil';
 
 interface IProps {}
 
-export const AboutPage: React.FC<IProps> = observer((props) => {
-  const { showsStore } = rootStore;
+export const AboutPage: NextPage<IProps> = observer((props) => {
+  const { showsStore } = useRootStoreContext();
 
   useEffect(() => {
     showsStore.requestError();

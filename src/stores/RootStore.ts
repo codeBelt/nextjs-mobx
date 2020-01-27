@@ -7,7 +7,7 @@ export default class RootStore {
   readonly showsStore: ReturnType<typeof ShowsStore>;
   readonly toastsStore: ReturnType<typeof ToastsStore>;
 
-  constructor(initialState: RecursivePartial<RootStore>) {
+  constructor(initialState: Partial<RootStore>) {
     this.showsStore = ShowsStore(this, initialState.showsStore);
     this.toastsStore = ToastsStore(this, initialState.toastsStore);
   }

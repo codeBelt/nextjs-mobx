@@ -49,7 +49,7 @@ export const ShowsStore = (rootStore: RootStore, initialState: {} = {}) =>
     async requestEpisodes() {
       const endpoint = environment.api.episodes.replace(':showId', this.currentShowId);
 
-      await requestAction(
+      const response = await requestAction(
         (status) => {
           this.episodes = { ...this.episodes, ...status };
         },
@@ -57,6 +57,9 @@ export const ShowsStore = (rootStore: RootStore, initialState: {} = {}) =>
         responseToModels(EpisodeModel),
         toastResponseError
       );
+
+      // Response needed for getInitialProps in EpisodesPage
+      return response;
     },
 
     async requestCast() {

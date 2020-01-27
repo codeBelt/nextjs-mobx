@@ -9,13 +9,14 @@ import { Routes } from '../../constants/Routes';
 import { SearchLocalStore } from './stores/SearchLocalStore';
 import { PageLayout } from '../shared/PageLayout';
 import { useRouter } from 'next/router';
+import { NextPage } from 'next';
 
 interface IRouteParams {
   term: 'term';
 }
 interface IProps {}
 
-export const SearchPage: React.FC<IProps> = observer((props) => {
+export const SearchPage: NextPage<IProps> = observer((props) => {
   const router = useRouter();
   const [inputValue, setInputValue] = useState('');
   const searchStore = useLocalStore(SearchLocalStore, { endpoint: environment.api.showsSearch });

@@ -1,62 +1,23 @@
 import './App.scss';
 
-import React, { Suspense } from 'react';
-import NextApp from 'next/app';
-import { getStores, StoreProvider } from '../stores/stores';
-import { configure } from 'mobx';
-import RootStore from '../stores/RootStore';
+import React from 'react';
+import NextApp, { AppProps } from 'next/app';
+import { createRootStore } from '../utilities/storeUtil';
+import { useStaticRendering, Provider } from 'mobx-react';
+import environment from 'environment';
 
-// https://github.com/zeit/next.js/tree/canary/examples
-// https://github.com/zeit/next.js/tree/canary/examples/with-external-styled-jsx-sass
-// https://github.com/zeit/next.js/tree/canary/examples/with-next-sass
+useStaticRendering(environment.isServer);
 
-// https://github.com/zeit/next.js/tree/canary/examples/with-mobx
-// https://github.com/zeit/next.js/tree/canary/examples/with-mobx-react-lite
-
-// https://github.com/borekb/nextjs-with-mobx
-
-// https://github.com/nghiepit/next-mobx-wrapper
-
-// configure({ enforceActions: 'always' }); // https://mobx.js.org/refguide/api.html#enforceactions
-
-export let rootStore = new RootStore({});
-
-export class App extends NextApp<{ initialData: any }> {
-  static async getInitialProps(appContext) {
-    // On server-side, this runs once and creates new stores
-    // On client-side, this always reuses existing stores
-    const mobxStores = getStores();
-
-    // Make stores available to page's `getInitialProps`
-    appContext.ctx.mobxStores = mobxStores;
-
-    // Call "super" to run page's `getInitialProps`
-    const appProps = await NextApp.getInitialProps(appContext);
-
-    // Gather serialization-friendly data from stores
-    const initialData = {
-      postStoreInitialData: mobxStores.postStore.__data(),
-    };
-
-    // Send it to `render`
-    return {
-      ...appProps,
-      initialData,
-    };
-  }
-
+export class App extends NextApp<AppProps<{}>> {
   render() {
-    const { Component, pageProps, initialData } = this.props;
+    const { Component, pageProps } = this.props;
 
-    // During SSR, this will create new store instances so having `initialData` is crucial.
-    // During the client-side hydration, same applies.
-    // From then on, calls to `getStores()` return existing instances.
-    const stores = getStores(initialData);
+    const rootStore = createRootStore(pageProps);
 
     return (
-      <StoreProvider value={stores}>
-        <Component {...pageProps} />
-      </StoreProvider>
+      <Provider value={rootStore}>
+        <Component />
+      </Provider>
     );
   }
 }

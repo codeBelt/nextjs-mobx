@@ -9,6 +9,8 @@
     }
   },
   "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "storybook-build": "build-storybook",
     "dev": "cross-env CLIENT_ENV=development next",
     "build": "cross-env CLIENT_ENV=production next build",
     "start": "cross-env CLIENT_ENV=production next start",
@@ -36,6 +38,10 @@
     "@babel/plugin-proposal-class-properties": "7.8.3",
     "@babel/plugin-proposal-decorators": "7.8.3",
     "@next/bundle-analyzer": "9.2.0",
+    "@storybook/addon-actions": "5.3.9",
+    "@storybook/addon-links": "5.3.9",
+    "@storybook/addons": "5.3.9",
+    "@storybook/react": "5.3.9",
     "@types/lodash.groupby": "4.6.6",
     "@types/node": "13.1.8",
     "@types/react": "16.9.17",
@@ -44,6 +50,8 @@
     "@typescript-eslint/eslint-plugin": "2.16.0",
     "@typescript-eslint/parser": "2.16.0",
     "@webdeb/next-styles": "1.0.2",
+    "babel-loader": "8.0.5",
+    "babel-preset-react-app": "9.1.0",
     "cross-env": "6.0.3",
     "eslint": "6.8.0",
     "eslint-config-prettier": "6.9.0",

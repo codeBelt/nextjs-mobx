@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = ({ config, mode }) => {
 
-  config.resolve.alias['environment'] = path.join(__dirname, '../', 'src', 'environments', process.env.CLIENT_ENV || 'development');
+  config.resolve.alias['environment'] = path.join(__dirname, '../src/environments', process.env.CLIENT_ENV || 'development');
 
   config.module.rules.push({
     test: /\.(ts|tsx)$/,

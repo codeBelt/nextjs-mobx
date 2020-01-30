@@ -28,15 +28,15 @@ import ImageModel from '../ImageModel';
     }
  */
 export default class PersonModel extends BaseModel {
-  public readonly id: number = 0;
-  public readonly name: string = '';
-  public readonly birthday: string = '';
-  public readonly image: ImageModel | null = ImageModel as any;
+  readonly id: number = 0;
+  readonly name: string = '';
+  readonly birthday: string = '';
+  readonly image: ImageModel | null = ImageModel as any;
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<PersonModel>) {
     super();

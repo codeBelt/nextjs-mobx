@@ -10,8 +10,8 @@ import ShowModel from '../../../../stores/shows/models/shows/ShowModel';
     }
  */
 export default class ShowsSearchResponseModel extends BaseModel {
-  public readonly score: number = 0;
-  public readonly show: ShowModel = ShowModel as any;
+  readonly score: number = 0;
+  readonly show: ShowModel = ShowModel as any;
 
   constructor(data: RecursivePartial<ShowsSearchResponseModel>) {
     super();

@@ -10,14 +10,14 @@ import { BaseModel } from 'sjs-base-model';
     }
  */
 export default class CountryModel extends BaseModel {
-  public readonly name: string = '';
-  public readonly code: string = '';
-  public readonly timezone: string = '';
+  readonly name: string = '';
+  readonly code: string = '';
+  readonly timezone: string = '';
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<CountryModel>) {
     super();

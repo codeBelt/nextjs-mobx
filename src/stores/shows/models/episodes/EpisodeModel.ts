@@ -27,18 +27,18 @@ import ImageModel from '../ImageModel';
     }
  */
 export default class EpisodeModel extends BaseModel {
-  public readonly id: number = 0;
-  public readonly season: number = 0;
-  public readonly number: number = 0;
-  public readonly name: string = '';
-  public readonly airdate: string = '';
-  public readonly image: ImageModel | null = ImageModel as any;
-  public readonly summary: string = '';
+  readonly id: number = 0;
+  readonly season: number = 0;
+  readonly number: number = 0;
+  readonly name: string = '';
+  readonly airdate: string = '';
+  readonly image: ImageModel | null = ImageModel as any;
+  readonly summary: string = '';
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<EpisodeModel>) {
     super();

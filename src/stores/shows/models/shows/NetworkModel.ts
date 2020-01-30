@@ -15,14 +15,14 @@ import CountryModel from './CountryModel';
     }
  */
 export default class NetworkModel extends BaseModel {
-  public readonly id: number = 0;
-  public readonly name: string = '';
-  public readonly country: CountryModel = CountryModel as any;
+  readonly id: number = 0;
+  readonly name: string = '';
+  readonly country: CountryModel = CountryModel as any;
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<NetworkModel>) {
     super();

@@ -20,14 +20,14 @@ import ImageModel from '../ImageModel';
     }
  */
 export default class CharacterModel extends BaseModel {
-  public readonly id: number = 0;
-  public readonly name: string = '';
-  public readonly image: ImageModel | null = ImageModel as any;
+  readonly id: number = 0;
+  readonly name: string = '';
+  readonly image: ImageModel | null = ImageModel as any;
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<CharacterModel>) {
     super();

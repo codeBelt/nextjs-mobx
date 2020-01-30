@@ -9,13 +9,13 @@ import { BaseModel } from 'sjs-base-model';
     }
  */
 export default class ImageModel extends BaseModel {
-  public readonly medium: string = '';
-  public readonly original: string = '';
+  readonly medium: string = '';
+  readonly original: string = '';
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<ImageModel>) {
     super();

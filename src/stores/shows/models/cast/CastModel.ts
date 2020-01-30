@@ -13,15 +13,15 @@ import CharacterModel from './CharacterModel';
     }
  */
 export default class CastModel extends BaseModel {
-  public readonly person: PersonModel = PersonModel as any;
-  public readonly character: CharacterModel = CharacterModel as any;
-  public readonly self: boolean = false;
-  public readonly voice: boolean = false;
+  readonly person: PersonModel = PersonModel as any;
+  readonly character: CharacterModel = CharacterModel as any;
+  readonly self: boolean = false;
+  readonly voice: boolean = false;
 
   /*
    * Client-Side properties (Not from API)
    */
-  // public noneApiProperties: unknown = null;
+  // noneApiProperties: unknown = null;
 
   constructor(data: RecursivePartial<CastModel>) {
     super();

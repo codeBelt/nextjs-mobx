@@ -17,22 +17,22 @@ interface IRouteParams {
 interface IProps {}
 
 export const SearchPage: NextPage<IProps> = observer((props) => {
-  const router = useRouter();
+  const { push, query } = useRouter();
   const [inputValue, setInputValue] = useState('');
   const searchStore = useLocalStore(SearchLocalStore, { endpoint: environment.api.showsSearch });
 
   useEffect(() => {
-    const searchTerm = (router.query.term as string) ?? '';
+    const searchTerm = (query.term as string) ?? '';
 
     setInputValue(searchTerm);
     searchStore.search(searchTerm);
-  }, [router.query, searchStore]);
+  }, [query, searchStore]);
 
   const { isRequesting, data } = searchStore.searchResults;
 
   const onClickSearch = useCallback(() => {
-    router.push(`${Routes.Search}?term=${inputValue}`);
-  }, [router.push, inputValue]);
+    push(`${Routes.Search}?term=${inputValue}`);
+  }, [push, inputValue]);
   const onChangeInput = useCallback(
     (event: React.ChangeEvent<HTMLInputElement>, data: InputOnChangeData) => {
       setInputValue(data.value);

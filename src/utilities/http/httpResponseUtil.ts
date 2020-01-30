@@ -1,6 +1,7 @@
 import { isDefined } from '../miscUtil';
 import { fillInErrorWithDefaults } from './fillInErrorWithDefaults';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const createResponseError = (error: any, restRequest: Partial<Request>) => {
   if (error.response) {
     // The request was made and the server responded with a status code that falls out of the range of 2xx

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { BaseModel } from 'sjs-base-model';
 import PersonModel from './PersonModel';
 import CharacterModel from './CharacterModel';

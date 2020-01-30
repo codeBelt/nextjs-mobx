@@ -9,7 +9,7 @@ export const responseToModels = <T>(Model: Constructor<FlattenIfArray<T>>) => {
   return (response: APIResponse<T>): APIResponse<T> => {
     const { data, error } = response;
 
-    return error ? response : { data: createModels(Model, data) };
+    return error ? response : { data: createModels(Model, data) as T };
   };
 };
 

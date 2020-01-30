@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import uuid from 'uuid/v4';
 import IError from './IError';
 import { BaseModel } from 'sjs-base-model';

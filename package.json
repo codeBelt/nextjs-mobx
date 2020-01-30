@@ -17,7 +17,8 @@
     "export": "cross-env CLIENT_ENV=production next build && next export",
     "analyze": "cross-env ANALYZE=true npm run build",
     "eslint": "eslint '*/**/*.{js,ts,tsx}' --fix",
-    "ts": "tsc --noEmit"
+    "ts": "tsc --noEmit",
+    "lint": "npm-run-all --parallel eslint ts"
   },
   "dependencies": {
     "axios": "0.19.2",
@@ -66,6 +67,7 @@
     "husky": "4.2.1",
     "nextjs-sitemap-generator": "0.5.0",
     "node-sass": "4.13.1",
+    "npm-run-all": "4.1.5",
     "prettier": "1.19.1",
     "pretty-quick": "2.0.1",
     "sass-loader": "8.0.2",

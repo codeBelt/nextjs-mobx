@@ -9,17 +9,23 @@
     }
   },
   "scripts": {
+    "---------- HELPERS ------------------------------------------------------": "",
+    "ts": "tsc --noEmit",
+    "ts:watch": "npm run ts -- --watch",
+    "---------- DEVELOPMENT --------------------------------------------------": "",
     "storybook": "start-storybook -p 6006",
     "storybook-build": "build-storybook",
     "dev": "cross-env CLIENT_ENV=development next",
+    "---------- PRODUCTION ---------------------------------------------------": "",
     "build": "cross-env CLIENT_ENV=production next build",
     "start": "cross-env CLIENT_ENV=production next start",
     "export": "cross-env CLIENT_ENV=production next build && next export",
+    "---------- TESTING ------------------------------------------------------": "",
     "analyze": "cross-env ANALYZE=true npm run build",
     "eslint": "eslint '*/**/*.{js,ts,tsx}'",
     "eslint:fix": "eslint '*/**/*.{js,ts,tsx}' --fix",
-    "ts": "tsc --noEmit",
-    "lint": "npm-run-all --parallel eslint:fix ts"
+    "lint": "npm-run-all --parallel eslint:fix ts",
+    "-------------------------------------------------------------------------": ""
   },
   "dependencies": {
     "axios": "0.19.2",

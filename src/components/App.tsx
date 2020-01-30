@@ -6,7 +6,8 @@ import { createRootStore } from '../utilities/storeUtil';
 import { useStaticRendering, Provider } from 'mobx-react';
 import environment from 'environment';
 
-useStaticRendering(environment.isServer);
+// eslint-disable-next-line react-hooks/rules-of-hooks
+useStaticRendering(environment.isServer); // Not a react-hook
 
 export class App extends NextApp<AppProps<{}>> {
   render() {

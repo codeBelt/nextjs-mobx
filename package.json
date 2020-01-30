@@ -16,9 +16,10 @@
     "start": "cross-env CLIENT_ENV=production next start",
     "export": "cross-env CLIENT_ENV=production next build && next export",
     "analyze": "cross-env ANALYZE=true npm run build",
-    "eslint": "eslint '*/**/*.{js,ts,tsx}' --fix",
+    "eslint": "eslint '*/**/*.{js,ts,tsx}'",
+    "eslint:fix": "eslint '*/**/*.{js,ts,tsx}' --fix",
     "ts": "tsc --noEmit",
-    "lint": "npm-run-all --parallel eslint ts"
+    "lint": "npm-run-all --parallel eslint:fix ts"
   },
   "dependencies": {
     "axios": "0.19.2",

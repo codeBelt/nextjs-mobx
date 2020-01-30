@@ -39,7 +39,7 @@ export const createResponseError = (error: any, restRequest: Partial<Request>) =
         status: 0,
         message: error.message,
         errors: [error.message],
-        url: restRequest.url!,
+        url: restRequest.url,
         raw: error,
       },
       restRequest

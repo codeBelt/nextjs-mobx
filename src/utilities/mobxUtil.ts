@@ -25,7 +25,7 @@ export const requestAction = async <T>(
   if (error) {
     statusData.error = error;
   } else {
-    statusData.data = data!;
+    statusData.data = data;
   }
 
   runInAction(() => callback(statusData));

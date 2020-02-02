@@ -15,4 +15,17 @@ describe('SearchLocalStore', () => {
     expect(searchLocalStore.searchResults).toEqual(initialResponseStatus([]));
     expect(searchLocalStore.resultsText).toEqual('Results: 0');
   });
+
+  test('should start search term request', () => {
+    const searchTerm = 'Robert is Cool';
+
+    searchLocalStore.search(searchTerm);
+
+    expect(searchLocalStore.currentSearchTerm).toEqual(searchTerm);
+    expect(searchLocalStore.resultsText).toEqual('Searching...');
+    expect(searchLocalStore.searchResults).toEqual({
+      isRequesting: true,
+      data: [],
+    });
+  });
 });

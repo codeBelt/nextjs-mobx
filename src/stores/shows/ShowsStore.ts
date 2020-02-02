@@ -124,3 +124,5 @@ export const ShowsStore = (rootStore: RootStore, initialState: {} = {}) =>
       );
     },
   });
+
+export type ShowsStoreType = ReturnType<typeof ShowsStore>;

@@ -45,3 +45,5 @@ export const SearchLocalStore = (source: ISourceProps) => ({
     );
   },
 });
+
+export type SearchLocalStoreType = ReturnType<typeof SearchLocalStore>;

@@ -26,7 +26,7 @@ describe('SearchLocalStore', () => {
         results: 'any thing so that I can see this fail at least',
       });
 
-    const searchTerm = 'Robert is Cool';
+    const searchTerm = 'Friends';
 
     searchLocalStore.search(searchTerm);
 

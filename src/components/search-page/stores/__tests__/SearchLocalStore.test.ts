@@ -1,6 +1,7 @@
 import { SearchLocalStore, SearchLocalStoreType } from '../SearchLocalStore';
 import environment from 'environment';
 import { initialResponseStatus } from '../../../../models/IResponseStatus';
+import nock from 'nock';
 
 describe('SearchLocalStore', () => {
   let searchLocalStore: SearchLocalStoreType;
@@ -17,6 +18,14 @@ describe('SearchLocalStore', () => {
   });
 
   test('should start search term request', () => {
+    // 'https://api.tvmaze.com/search/shows?q=Friends'
+
+    nock('https://api.tvmaze.com')
+      .get('/search/shows?q=Friends')
+      .reply(200, {
+        results: 'any thing so that I can see this fail at least',
+      });
+
     const searchTerm = 'Robert is Cool';
 
     searchLocalStore.search(searchTerm);

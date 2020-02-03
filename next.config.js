@@ -1,6 +1,6 @@
 const path = require('path');
 const axios = require('axios');
-const webpack = require('webpack')
+const webpack = require('webpack');
 const withStyles = require('@webdeb/next-styles');
 const { parsed: localEnv } = require('dotenv').config();
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

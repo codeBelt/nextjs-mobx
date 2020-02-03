@@ -21,11 +21,11 @@ export const SearchLocalStore = (source: ISourceProps) => ({
     return isRequesting ? 'Searching...' : `Results: ${data.length}`;
   },
 
-  search(searchTerm: string) {
+  async search(searchTerm: string) {
     if (searchTerm !== this.currentSearchTerm) {
       runInAction(() => (this.currentSearchTerm = searchTerm));
 
-      this._requestData();
+      await this._requestData();
     }
   },
 
@@ -40,8 +40,8 @@ export const SearchLocalStore = (source: ISourceProps) => ({
         };
       },
       http.get<ShowsSearchResponseModel[]>(endpoint),
-      responseToModels(ShowsSearchResponseModel),
-      toastResponseError
+      responseToModels(ShowsSearchResponseModel)
+      // toastResponseError
     );
   },
 });

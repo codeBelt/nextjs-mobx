@@ -17,6 +17,7 @@
     "storybook-build": "build-storybook",
     "dev": "cross-env CLIENT_ENV=development next",
     "---------- PRODUCTION ---------------------------------------------------": "",
+    "prebuild": "npm run ts",
     "build": "cross-env CLIENT_ENV=production next build",
     "start": "cross-env CLIENT_ENV=production next start",
     "export": "cross-env CLIENT_ENV=production next build && next export",

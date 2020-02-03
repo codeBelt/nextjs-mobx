@@ -4,4 +4,5 @@ module.exports = {
   moduleNameMapper: {
     environment: '<rootDir>/src/environments/test',
   },
+  testEnvironment: 'node',
 };

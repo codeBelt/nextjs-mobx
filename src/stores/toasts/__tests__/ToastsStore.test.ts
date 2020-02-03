@@ -21,7 +21,7 @@ describe('ToastsStore', () => {
   });
 
   test('should have default state', () => {
-    expect(toastsStore.items.length).toEqual(0);
+    expect(toastsStore.items).toHaveLength(0);
   });
 
   test('should have initial state', () => {
@@ -39,9 +39,9 @@ describe('ToastsStore', () => {
 
   test('should remove error toast by id', () => {
     toastsStore.add(mockToast.message, mockToast.type);
-    expect(toastsStore.items.length).toEqual(1);
+    expect(toastsStore.items).toHaveLength(1);
 
     toastsStore.remove(mockUuid);
-    expect(toastsStore.items.length).toEqual(0);
+    expect(toastsStore.items).toHaveLength(0);
   });
 });

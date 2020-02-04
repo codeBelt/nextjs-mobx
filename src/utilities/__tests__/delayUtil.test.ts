@@ -29,7 +29,7 @@ const mockApi = async (duration: number, returnValue: any) => {
   return returnValue;
 };
 
-describe('delayApi()', () => {
+describe('delayApi', () => {
   test('should delay for the default amount of time and return correct responses', async () => {
     const expectedDelayTime = 250;
 

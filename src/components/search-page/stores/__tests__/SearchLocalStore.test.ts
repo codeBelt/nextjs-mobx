@@ -55,6 +55,6 @@ describe('SearchLocalStore', () => {
       isRequesting: false,
       data: expectedData,
     });
-    expect(searchLocalStore.searchResults[0]).toBeInstanceOf(ShowModel);
+    expect(searchLocalStore.searchResults.data[0]).toBeInstanceOf(ShowModel);
   });
 });

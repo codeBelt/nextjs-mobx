@@ -6,7 +6,7 @@ import { initialResponseStatus } from '../../../../models/IResponseStatus';
 import nock from 'nock';
 import ShowModel from '../../../../stores/shows/models/shows/ShowModel';
 import { splitBySeparator } from '../../../../utilities/stringUtil';
-import { SearchLocalStoreMockData } from '../___helpers__/SearchLocalStore.mockData';
+import { SearchLocalStoreMockData } from '../__mocks__/SearchLocalStore.mockData';
 
 describe('SearchLocalStore', () => {
   let searchLocalStore: SearchLocalStoreType;

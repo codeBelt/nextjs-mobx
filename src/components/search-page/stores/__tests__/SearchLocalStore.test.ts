@@ -22,7 +22,7 @@ describe('SearchLocalStore', () => {
     expect(searchLocalStore.resultsText).toEqual('Results: 0');
   });
 
-  test('should start search term request', async () => {
+  test('should have successful search term request', async () => {
     const searchTerm = 'Friends';
     const endpoint = environment.api.showsSearch.replace(':searchTerm', searchTerm);
     const [baseUrl, sourceUrl] = splitBySeparator(endpoint, '.com');

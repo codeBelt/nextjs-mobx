@@ -1,9 +1,9 @@
 import React from 'react';
-import {Toasts} from './Toasts';
-import {wrapWithStore} from '../../../../.storybook/mocks/wrapWithStore';
-import {useRootStoreContext} from '../../../utilities/storeUtil';
-import {Button} from 'semantic-ui-react';
-import {ToastStatus} from '../../../constants/ToastStatus';
+import { Toasts } from './Toasts';
+import { wrapWithStore } from '../../../../.storybook/mocks/wrapWithStore';
+import { useRootStoreContext } from '../../../utilities/storeUtil';
+import { Button } from 'semantic-ui-react';
+import { ToastStatus } from '../../../constants/ToastStatus';
 
 export default {
   title: 'Toasts',
@@ -16,12 +16,7 @@ export const DefaultToasts = () => {
   return (
     <div>
       <Toasts />
-      <Button
-        onClick={() => toastsStore.add('message', ToastStatus.Success)}
-      >
-        Click me to show a toast
-      </Button>
+      <Button onClick={() => toastsStore.add('message', ToastStatus.Success)}>Click me to show a toast</Button>
     </div>
-  )
+  );
 };
-

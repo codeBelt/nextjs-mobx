@@ -4,7 +4,7 @@ import React from 'react';
 import { Button, Card } from 'semantic-ui-react';
 import IToast from '../../../stores/toasts/models/IToast';
 import { observer } from 'mobx-react';
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import { errorColorMap } from '../../../constants/errorColorMap';
 import { useRootStoreContext } from '../../../utilities/storeUtil';
 
@@ -20,7 +20,7 @@ export const ToastCard: React.FC<IProps> = observer((props) => {
     toastsStore.remove(item.id);
   }, [item.id, toastsStore]);
 
-  const buttonColor = useMemo(() => errorColorMap[item.type], [item.type]);
+  const buttonColor = errorColorMap[item.type];
 
   return (
     <Card>

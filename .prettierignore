@@ -40,3 +40,4 @@ tools/templates
 webpack.config.js
 tools
 *.d.ts
+docs/*

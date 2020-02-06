@@ -14,7 +14,7 @@
     "ts:watch": "npm run ts -- --watch",
     "---------- DEVELOPMENT --------------------------------------------------": "",
     "storybook": "start-storybook -p 6006",
-    "storybook-build": "build-storybook",
+    "storybook-build": "build-storybook -o ./docs",
     "dev": "cross-env CLIENT_ENV=development next",
     "---------- PRODUCTION ---------------------------------------------------": "",
     "prebuild": "npm run ts",

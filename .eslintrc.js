@@ -6,6 +6,7 @@ module.exports = {
   parser: '@typescript-eslint/parser', // Specifies the ESLint parser
   plugins: [
     'react-hooks', // Uses eslint-plugin-react-hooks
+    'destructuring', // Uses eslint-plugin-destructuring
   ],
   extends: [
     'plugin:react/recommended', // Uses the recommended rules from @eslint-plugin-react
@@ -13,6 +14,7 @@ module.exports = {
     'prettier/@typescript-eslint', // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
     // Make sure this is always the last configuration in the extends array.
     'plugin:prettier/recommended', // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors.
+    'plugin:destructuring/recommended',
   ],
   parserOptions: {
     ecmaVersion: 2018, // Allows for the parsing of modern ECMAScript features
@@ -32,6 +34,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 2,
     'react-hooks/exhaustive-deps': 1,
     'react/prop-types': 0,
+    'destructuring/no-rename': 0,
+    'destructuring/in-params': ['error', { 'max-params': 0 }],
   },
   settings: {
     react: {

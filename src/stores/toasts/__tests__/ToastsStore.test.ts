@@ -1,4 +1,4 @@
-import { ToastsStore, ToastsStoreType } from '../ToastsStore';
+import { ToastsStore } from '../ToastsStore';
 import RootStore from '../../RootStore';
 import { ToastStatus } from '../../../constants/ToastStatus';
 import IToast from '../models/IToast';
@@ -7,7 +7,7 @@ const mockUuid = '1234';
 jest.mock('uuid/v4', () => () => mockUuid);
 
 describe('ToastsStore', () => {
-  let toastsStore: ToastsStoreType;
+  let toastsStore: ToastsStore;
   let rootStore: RootStore;
   const mockToast: IToast = {
     id: mockUuid,

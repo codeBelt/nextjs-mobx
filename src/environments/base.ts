@@ -13,6 +13,7 @@ export default function baseEnv(baseApi: string) {
       episodes: `${baseApi}/shows/:showId/episodes`,
       shows: `${baseApi}/shows/:showId`,
       showsSearch: `${baseApi}/search/shows?q=:searchTerm`,
+      person: `${baseApi}/people/:personId`,
       errorExample: 'https://httpstat.us/520',
     },
     isServer: typeof window === 'undefined',

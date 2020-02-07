@@ -1,6 +1,6 @@
 import { removeSjsId } from '../../../../utilities/sjsBaseModelHelper';
 
-import { SearchLocalStore, SearchLocalStoreType } from '../SearchLocalStore';
+import { SearchLocalStore } from '../SearchLocalStore';
 import environment from 'environment';
 import { initialResponseStatus } from '../../../../models/IResponseStatus';
 import nock from 'nock';
@@ -9,7 +9,7 @@ import { splitBySeparator } from '../../../../utilities/stringUtil';
 import { SearchLocalStoreMockData } from '../__mocks__/SearchLocalStore.mockData';
 
 describe('SearchLocalStore', () => {
-  let searchLocalStore: SearchLocalStoreType;
+  let searchLocalStore: SearchLocalStore;
 
   beforeEach(() => {
     searchLocalStore = SearchLocalStore({ endpoint: environment.api.showsSearch });

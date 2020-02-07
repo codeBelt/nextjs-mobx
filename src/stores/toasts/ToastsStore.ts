@@ -31,4 +31,4 @@ export const ToastsStore = (rootStore: RootStore, initialState: Partial<ToastsSt
     },
   });
 
-export type ToastsStoreType = ReturnType<typeof ToastsStore>;
+export type ToastsStore = ReturnType<typeof ToastsStore>;

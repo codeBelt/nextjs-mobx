@@ -130,4 +130,4 @@ export const ShowsStore = (rootStore: RootStore, initialState: Partial<ShowsStor
     },
   });
 
-export type ShowsStoreType = ReturnType<typeof ShowsStore>;
+export type ShowsStore = ReturnType<typeof ShowsStore>;

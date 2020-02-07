@@ -9,7 +9,7 @@ export const PersonLocalStore = () => ({
   person: initialResponseStatus<PersonModel>(null),
 
   async getPerson(personId: string) {
-    const endpoint = environment.api.person.replace(':personId', personId);
+    const endpoint = 'https://api.tvmaze.com/people/10709/anson-mount';
 
     await requestAction(
       (status) => {

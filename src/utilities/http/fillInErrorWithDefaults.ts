@@ -8,7 +8,7 @@ export const fillInErrorWithDefaults = (error: Partial<HttpErrorResponseModel>, 
     status: error.status || 0,
     message: error.message || 'Error requesting data',
     url: error.url || request.url,
-    raw: error.raw,
+    raw: null,
     // Remove anything with undefined or empty strings.
     errors: errors.filter(isDefined),
   });

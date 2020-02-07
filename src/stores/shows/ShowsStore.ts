@@ -55,7 +55,7 @@ export const ShowsStore = (rootStore: RootStore, initialState: Partial<ShowsStor
     },
 
     async requestEpisodes() {
-      const endpoint = environment.api.episodes.replace(':showId', this.currentShowId);
+      const endpoint = environment.api.episodes.replace(':showId', 'asdf');
 
       await requestAction(
         (status) => {

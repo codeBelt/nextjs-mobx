@@ -2,7 +2,7 @@ import './App.scss';
 
 import React from 'react';
 import NextApp, { AppProps } from 'next/app';
-import { createRootStore } from '../utilities/storeUtil';
+import { getRootStore } from '../utilities/storeUtil';
 import { useStaticRendering, Provider } from 'mobx-react';
 import environment from 'environment';
 
@@ -17,7 +17,7 @@ export class App extends NextApp<AppProps<{}>> {
   render() {
     const { Component, pageProps } = this.props;
 
-    const rootStore = createRootStore(pageProps);
+    const rootStore = getRootStore(pageProps);
 
     return (
       <Provider value={rootStore}>

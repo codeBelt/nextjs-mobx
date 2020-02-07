@@ -3,7 +3,7 @@ import { FlattenIfArray } from '../definitions/FlattenIfArray';
 import { APIResponse } from '../models/api';
 import { createModels } from './modelUtil';
 import { ToastStatus } from '../constants/ToastStatus';
-import { createRootStore } from './storeUtil';
+import { getRootStore } from './storeUtil';
 
 export const responseToModels = <T>(Model: Constructor<FlattenIfArray<T>>) => {
   return (response: APIResponse<T>): APIResponse<T> => {
@@ -17,7 +17,7 @@ export const toastResponseError = <T>(response: APIResponse<T>): APIResponse<T> 
   const { error } = response;
 
   if (error) {
-    createRootStore().toastsStore.add(error.message, ToastStatus.Error);
+    getRootStore().toastsStore.add(error.message, ToastStatus.Error);
   }
 
   return response;

@@ -3,15 +3,15 @@ import environment from 'environment';
 import RootStore from '../stores/RootStore';
 
 let _rootStore: RootStore;
-export let RootStoreContext: Context<RootStore>;
+let _rootStoreContext: Context<RootStore>;
 
 export const getRootStore = (initialState: Partial<RootStore> = {}) => {
   if (!_rootStore || environment.isServer) {
     _rootStore = new RootStore(initialState);
-    RootStoreContext = createContext(_rootStore);
+    _rootStoreContext = createContext(_rootStore);
   }
 
   return _rootStore;
 };
 
-export const useRootStoreContext = () => useContext(RootStoreContext);
+export const useRootStoreContext = () => useContext(_rootStoreContext);

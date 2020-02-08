@@ -8,13 +8,13 @@ interface IProps {
 
 export const ActorCard: React.FC<IProps> = (props) => {
   const { cardData } = props;
-  const image: string = cardData?.character?.image?.medium ?? '';
   const missingImage: string = 'https://react.semantic-ui.com/images/wireframe/image.png';
+  const image: string = cardData?.character?.image?.medium ?? missingImage;
 
   return (
     <Card key={cardData.person.name}>
       <Card.Content>
-        <Image floated="right" size="mini" src={image ?? missingImage} />
+        <Image floated="right" size="mini" src={image} />
         <Card.Header>{cardData.person.name}</Card.Header>
         <Card.Meta>as {cardData.character.name}</Card.Meta>
         <Card.Description>

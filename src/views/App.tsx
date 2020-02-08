@@ -2,7 +2,7 @@ import './App.scss';
 
 import React from 'react';
 import NextApp, { AppProps } from 'next/app';
-import { getRootStore } from '../utilities/storeUtil';
+import { getRootStore } from '../utils/storeUtil';
 import { useStaticRendering, Provider } from 'mobx-react';
 import environment from 'environment';
 

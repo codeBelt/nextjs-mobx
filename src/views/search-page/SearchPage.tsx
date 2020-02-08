@@ -7,7 +7,7 @@ import { Form, InputOnChangeData, Item, Label, Icon } from 'semantic-ui-react';
 import { SearchResult } from './components/search-result/SearchResult';
 import { Routes } from '../../constants/Routes';
 import { SearchLocalStore } from './stores/SearchLocalStore';
-import { PageLayout } from '../shared/PageLayout';
+import { PageLayout } from '../components/PageLayout';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
 

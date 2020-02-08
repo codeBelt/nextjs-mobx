@@ -1,3 +1,3 @@
-import { EpisodesPage } from '../components/episodes-page/EpisodesPage';
+import { EpisodesPage } from '../views/episodes-page/EpisodesPage';
 
 export default EpisodesPage;

@@ -1,12 +1,12 @@
 // import styles from './AboutPage.module.scss';
 
 import React, { useEffect } from 'react';
-import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
+import { LoadingIndicator } from '../components/loading-indicator/LoadingIndicator';
 import { Header, Container, Message } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
-import { PageLayout } from '../shared/PageLayout';
+import { PageLayout } from '../components/PageLayout';
 import { NextPage } from 'next';
-import { useRootStoreContext } from '../../utilities/storeUtil';
+import { useRootStoreContext } from '../../utils/storeUtil';
 
 interface IProps {}
 

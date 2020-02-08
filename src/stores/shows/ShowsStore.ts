@@ -7,11 +7,11 @@ import IEpisodeTable from './computed/IEpisodeTable';
 import IEpisodeTableRow from './computed/IEpisodeTableRow';
 import dayjs from 'dayjs';
 import { initialResponseStatus, IResponseStatus } from '../../models/IResponseStatus';
-import { requestAction } from '../../utilities/mobxUtil';
+import { requestAction } from '../../utils/mobxUtil';
 import RootStore from '../RootStore';
 import { observable, runInAction } from 'mobx';
-import http from '../../utilities/http';
-import { toastResponseError, responseToModels } from '../../utilities/apiUtil';
+import http from '../../utils/http';
+import { toastResponseError, responseToModels } from '../../utils/apiUtil';
 
 export interface ShowsStoreState {
   currentShowId: string;

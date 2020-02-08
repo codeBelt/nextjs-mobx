@@ -11,7 +11,7 @@ interface IProps {}
 export const PersonPage: NextPage<IProps> = observer((props) => {
   return (
     <PageLayout title="Person Page">
-      <div>Hey</div>
+      <div>TODO</div>
     </PageLayout>
   );
 });

@@ -6,7 +6,7 @@ import IToast from '../../../stores/toasts/models/IToast';
 import { observer } from 'mobx-react';
 import { useCallback } from 'react';
 import { errorColorMap } from '../../../constants/errorColorMap';
-import { useRootStoreContext } from '../../../utilities/storeUtil';
+import { useRootStoreContext } from '../../../utils/storeUtil';
 
 interface IProps {
   readonly item: IToast;

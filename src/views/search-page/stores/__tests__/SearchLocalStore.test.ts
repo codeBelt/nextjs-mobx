@@ -1,11 +1,11 @@
-import { removeSjsId } from '../../../../utilities/sjsBaseModelHelper';
+import { removeSjsId } from '../../../../utils/sjsBaseModelHelper';
 
 import { SearchLocalStore } from '../SearchLocalStore';
 import environment from 'environment';
 import { initialResponseStatus } from '../../../../models/IResponseStatus';
 import nock from 'nock';
 import ShowModel from '../../../../stores/shows/models/shows/ShowModel';
-import { splitBySeparator } from '../../../../utilities/stringUtil';
+import { splitBySeparator } from '../../../../utils/stringUtil';
 import { SearchLocalStoreMockData } from '../__mocks__/SearchLocalStore.mockData';
 
 describe('SearchLocalStore', () => {

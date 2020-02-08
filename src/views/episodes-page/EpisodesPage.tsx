@@ -2,11 +2,11 @@
 
 import React from 'react';
 import IEpisodeTable from '../../stores/shows/computed/IEpisodeTable';
-import { LoadingIndicator } from '../shared/loading-indicator/LoadingIndicator';
+import { LoadingIndicator } from '../components/loading-indicator/LoadingIndicator';
 import { EpisodesTable } from './components/episodes-table/EpisodesTable';
 import { observer } from 'mobx-react';
-import { PageLayout } from '../shared/PageLayout';
-import { getRootStore, useRootStoreContext } from '../../utilities/storeUtil';
+import { PageLayout } from '../components/PageLayout';
+import { getRootStore, useRootStoreContext } from '../../utils/storeUtil';
 import { NextPage, NextPageContext } from 'next';
 
 interface IProps {}

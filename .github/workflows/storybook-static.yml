@@ -3,7 +3,7 @@ name: Storybook to GH-Pages
 on:push
 
 jobs:
-  storybook:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1

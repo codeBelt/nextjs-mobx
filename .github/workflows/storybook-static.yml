@@ -1,6 +1,6 @@
 name: Storybook to GH-Pages
 
-on:push
+on:[push]
 
 jobs:
   build:

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Toasts } from './Toasts';
 import { wrapWithStore } from '../../../../.storybook/mocks/wrapWithStore';
-import { useRootStoreContext } from '../../../utilities/storeUtil';
+import { useRootStoreContext } from '../../../utils/storeUtil';
 import { Button } from 'semantic-ui-react';
 import { ToastStatus } from '../../../constants/ToastStatus';
 

@@ -6,7 +6,7 @@ import { Header, Container, Message } from 'semantic-ui-react';
 import { observer } from 'mobx-react';
 import { PageLayout } from '../shared/PageLayout';
 import { NextPage } from 'next';
-import { useRootStoreContext } from '../../utilities/storeUtil';
+import { useRootStoreContext } from '../../utils/storeUtil';
 
 interface IProps {}
 

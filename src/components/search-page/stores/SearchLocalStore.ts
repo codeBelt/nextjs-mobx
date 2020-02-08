@@ -2,9 +2,9 @@ import { initialResponseStatus } from '../../../models/IResponseStatus';
 import ShowsSearchResponseModel from './models/ShowsSearchResponseModel';
 import ShowModel from '../../../stores/shows/models/shows/ShowModel';
 import { runInAction } from 'mobx';
-import { requestAction } from '../../../utilities/mobxUtil';
-import { toastResponseError, responseToModels } from '../../../utilities/apiUtil';
-import http from '../../../utilities/http';
+import { requestAction } from '../../../utils/mobxUtil';
+import { toastResponseError, responseToModels } from '../../../utils/apiUtil';
+import http from '../../../utils/http';
 
 interface ISourceProps {
   endpoint: string;

@@ -8,7 +8,7 @@ import { MainOverview } from './components/main-overview/MainOverview';
 import { Actors } from './components/actors/Actors';
 import { PageLayout } from '../shared/PageLayout';
 import { NextPage } from 'next';
-import { useRootStoreContext } from '../../utilities/storeUtil';
+import { useRootStoreContext } from '../../utils/storeUtil';
 
 interface IProps {}
 

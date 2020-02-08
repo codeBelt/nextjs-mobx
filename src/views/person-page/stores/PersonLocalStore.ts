@@ -1,9 +1,9 @@
-import { initialResponseStatus } from '../../../models/IResponseStatus';
-import { requestAction } from '../../../utilities/mobxUtil';
-import { toastResponseError, responseToModels } from '../../../utilities/apiUtil';
-import http from '../../../utilities/http';
-import PersonModel from '../../../stores/shows/models/cast/PersonModel';
 import environment from 'environment';
+import { initialResponseStatus } from '../../../models/IResponseStatus';
+import PersonModel from '../../../stores/shows/models/cast/PersonModel';
+import { requestAction } from '../../../utils/mobxUtil';
+import { responseToModels, toastResponseError } from '../../../utils/apiUtil';
+import http from '../../../utils/http';
 
 export const PersonLocalStore = () => ({
   person: initialResponseStatus<PersonModel>(null),

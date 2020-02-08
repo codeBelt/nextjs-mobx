@@ -1,3 +1,3 @@
-import { PersonPage } from '../../../components/person-page/PersonPage';
+import { PersonPage } from '../../../views/person-page/PersonPage';
 
 export default PersonPage;

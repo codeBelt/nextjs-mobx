@@ -2,9 +2,9 @@
 
 import React from 'react';
 import { observer } from 'mobx-react';
-import { PageLayout } from '../shared/PageLayout';
 import { NextPage, NextPageContext } from 'next';
 import { PersonLocalStore } from './stores/PersonLocalStore';
+import { PageLayout } from '../components/PageLayout';
 
 interface IProps {}
 

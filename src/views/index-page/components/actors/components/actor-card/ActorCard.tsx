@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Image } from 'semantic-ui-react';
 import CastModel from '../../../../../../stores/shows/models/cast/CastModel';
 import Link from 'next/link';
-import { kebabCase } from '../../../../../../utilities/stringUtil';
+import { kebabCase } from '../../../../../../utils/stringUtil';
 
 interface IProps {
   readonly cardData: CastModel;

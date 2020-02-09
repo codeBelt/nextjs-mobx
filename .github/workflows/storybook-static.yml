@@ -8,14 +8,12 @@ jobs:
     steps:
       - name: Checkout
       - uses: actions/checkout@v1
-
-      - name: Build
       - uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-        run: |
-          yarn
-          yarn storybook-build
+      - run: yarn
+      - name: Build Storybook
+        run: yarn storybook-build
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@releases/v3

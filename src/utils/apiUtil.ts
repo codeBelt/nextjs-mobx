@@ -1,5 +1,5 @@
-import { Constructor } from '../definitions/Constructor';
-import { FlattenIfArray } from '../definitions/FlattenIfArray';
+import { Constructor } from '../typings/Constructor';
+import { FlattenIfArray } from '../typings/FlattenIfArray';
 import { APIResponse } from '../models/api';
 import { createModels } from './modelUtil';
 import { ToastStatus } from '../constants/ToastStatus';

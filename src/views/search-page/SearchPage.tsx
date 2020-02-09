@@ -10,19 +10,17 @@ import { SearchLocalStore } from './stores/SearchLocalStore';
 import { PageLayout } from '../components/PageLayout';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
+import { NextRouterQuery } from '../../typings/NextRouterQuery';
 
-interface IRouteParams {
-  term: 'term';
-}
 interface IProps {}
 
 export const SearchPage: NextPage<IProps> = observer((props) => {
-  const { push, query } = useRouter();
+  const { push, query } = useRouter() as NextRouterQuery<{ term: string }>;
   const [inputValue, setInputValue] = useState('');
   const searchStore = useLocalStore(SearchLocalStore, { endpoint: environment.api.showsSearch });
 
   useEffect(() => {
-    const searchTerm = (query.term as string) ?? '';
+    const searchTerm = query.term;
 
     setInputValue(searchTerm);
     searchStore.search(searchTerm);

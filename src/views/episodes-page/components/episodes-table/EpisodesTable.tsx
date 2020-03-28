@@ -3,8 +3,8 @@
 import React from 'react';
 import { Header, Table } from 'semantic-ui-react';
 import { EpisodesTableRow } from '../episodes-table-row/EpisodesTableRow';
-import IEpisodeTable from '../../../../stores/shows/computed/IEpisodeTable';
-import IEpisodeTableRow from '../../../../stores/shows/computed/IEpisodeTableRow';
+import IEpisodeTable from '../../../../stores/shows/models/computed/IEpisodeTable';
+import IEpisodeTableRow from '../../../../stores/shows/models/computed/IEpisodeTableRow';
 
 interface IProps {
   readonly tableData: IEpisodeTable;

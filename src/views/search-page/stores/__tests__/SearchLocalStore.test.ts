@@ -27,9 +27,7 @@ describe('SearchLocalStore', () => {
     const endpoint = environment.api.showsSearch.replace(':searchTerm', searchTerm);
     const [baseUrl, sourceUrl] = splitBySeparator(endpoint, '.com');
 
-    nock(baseUrl)
-      .get(sourceUrl)
-      .reply(200, SearchLocalStoreMockData);
+    nock(baseUrl).get(sourceUrl).reply(200, SearchLocalStoreMockData);
 
     const apiPromise = searchLocalStore.search(searchTerm);
 

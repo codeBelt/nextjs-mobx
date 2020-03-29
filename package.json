@@ -24,7 +24,7 @@
     "analyze": "cross-env ANALYZE=true npm run build",
     "eslint": "eslint '*/**/*.{js,jsx,ts,tsx}'",
     "eslint:fix": "npm run eslint --fix",
-    "lint": "npm-run-all --parallel eslint:fix ts",
+    "lint": "npm-run-all --parallel eslint ts",
     "---------- TESTING ------------------------------------------------------": "",
     "test": "jest",
     "test:watch": "jest --watch",

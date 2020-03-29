@@ -1,7 +1,6 @@
 const path = require('path');
 const axios = require('axios');
 const webpack = require('webpack');
-const withStyles = require('@webdeb/next-styles');
 const { parsed: localEnv } = require('dotenv').config();
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
@@ -44,13 +43,7 @@ const webpackConfig = (config, options) => {
   return config;
 };
 
-const withStylesConfig = {
-  sass: true,
-  modules: true,
-};
-
 const nextConfig = {
-  ...withStylesConfig,
   webpack: webpackConfig,
   env: {
     nextJsSecretKey: 'my-value',
@@ -58,4 +51,4 @@ const nextConfig = {
   // exportPathMap,
 };
 
-module.exports = withBundleAnalyzer(withStyles(nextConfig));
+module.exports = withBundleAnalyzer(nextConfig);

@@ -1,7 +1,5 @@
-import './App.scss';
-
 import React from 'react';
-import NextApp, { AppProps } from 'next/app';
+import NextApp from 'next/app';
 import { getRootStore } from '../utils/storeUtil';
 import { useStaticRendering, Provider } from 'mobx-react';
 import environment from 'environment';
@@ -13,7 +11,7 @@ useStaticRendering(environment.isServer); // Not a react-hook
 process.env.nextJsSecretKey;
 process.env.DOT_ENV_SECRET_KEY;
 
-export class App extends NextApp<AppProps<{}>> {
+export class App extends NextApp {
   render() {
     const { Component, pageProps } = this.props;
 

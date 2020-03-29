@@ -1,7 +1,7 @@
 // import styles from './EpisodesPage.module.scss';
 
 import React from 'react';
-import IEpisodeTable from '../../stores/shows/computed/IEpisodeTable';
+import IEpisodeTable from '../../stores/shows/models/computed/IEpisodeTable';
 import { LoadingIndicator } from '../components/loading-indicator/LoadingIndicator';
 import { EpisodesTable } from './components/episodes-table/EpisodesTable';
 import { observer } from 'mobx-react';

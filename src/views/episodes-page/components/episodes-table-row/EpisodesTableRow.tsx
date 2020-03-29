@@ -1,6 +1,6 @@
 import React from 'react';
 import { Image, Table } from 'semantic-ui-react';
-import IEpisodeTableRow from '../../../../stores/shows/computed/IEpisodeTableRow';
+import IEpisodeTableRow from '../../../../stores/shows/models/computed/IEpisodeTableRow';
 
 interface IProps {
   readonly rowData: IEpisodeTableRow;
